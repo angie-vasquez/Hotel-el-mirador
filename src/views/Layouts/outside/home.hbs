@@ -1,0 +1,30 @@
+    <link rel="stylesheet" href="css/estilosHome.css">
+    <link rel="stylesheet" href="css/inicio.css">
+    {{> navbar}}
+
+                <div class="titulo">
+                <h1>BIENVENIDO AL HOTEL EL MIRADOR</h1>
+
+                </div>
+                <div class="contenedor">
+                    </div>
+                <div class="caja">
+                    <form action="/home" method="POST">
+
+                    <label for="Fecha_ingreso">Entrada</label>
+                    <input type="text" name="Fecha_ingreso"  placeholder="" required>
+
+                    <label for="Fecha_salida">Salida</label>
+                    <input type="text" name="Fecha_salida"  placeholder="" required>
+
+                    <label for="Numero_adultos">Adultos</label>
+                    <input type="text" name="Numero_adultos"  placeholder="" required>
+
+                    <label for="Numero_niños">Niños</label>
+                    <input type="text" name="Numero_niños"  placeholder="" required>
+
+                    <input type="submit" value="Continuar">
+                    </form>
+
+
+                </div>

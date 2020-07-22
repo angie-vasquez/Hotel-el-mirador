@@ -1,0 +1,14 @@
+
+
+.titulo{
+
+    font-size:20px;
+    font-weight:bold;
+    text-align: center;
+    background: rgba(255,255,255,.2);
+    box-shadow:  0 5px  15px rgba(250, 248, 248, 0.5);
+  
+    line-height: 500px;
+
+}
+

@@ -1,0 +1,15 @@
+
+.titulo{
+    margin-bottom:40px;
+    position: relative;
+    line-height: 25px;
+    padding: 30 px;
+    background: rgba(230, 225, 225, 0.904);
+    box-shadow:  0 5px  15px rgba(0,0,0,.5);
+}
+.imagen1{
+    background-image:url("../img/habitaciondoble.jpg") ;
+    height:auto;
+    width: 200px;
+    background: #cccc;
+}
