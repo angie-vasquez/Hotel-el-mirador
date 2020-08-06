@@ -13,6 +13,7 @@
     padding: 50 px;
     background: rgba(230, 225, 225, 0.904);
     box-shadow:  0 5px  15px rgba(0,0,0,.5);
+    font-size: 14px;
 }
 .contenedor{
 
@@ -28,6 +29,7 @@
     padding: 50 px;
     background: rgba(223, 219, 219, 0.904);
     box-shadow:  0 5px  15px rgba(0,0,0,.5);
+ 
 }
  
 header nav{

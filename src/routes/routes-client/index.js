@@ -29,6 +29,7 @@ router.get('/Habitaciones',(req,res) => {
      
     res.render('Layouts/outside/habitaciones')
 })
+
 router.get('/Gastronomia',(req,res) => {
      
     res.render('Layouts/outside/Gastronomia')

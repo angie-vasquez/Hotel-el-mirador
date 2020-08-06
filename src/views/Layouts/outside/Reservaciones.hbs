@@ -1,0 +1,36 @@
+   <link rel="stylesheet" href="css/estilosHome.css">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<script src="http://momentjs.com/downloads/moment-with-locales.js"></script>
+<script src="http://momentjs.com/downloads/moment-timezone-with-data.js"></script>
+<script src="https://kit.fontawesome.com/c06d87160e.js" crossorigin="anonymous"></script>
+
+Time Zone: Europe/London
+
+<div class="container" style="margin-top:200px;">
+	<div class="row">
+        <form class="form-horizontal col-sm-7 col-sm-offset-2" action="" method="post">
+            <div class="form-group registration-date">
+                {{!-- <label class="control-label col-sm-3" for="registration-date">Date:</label> --}}
+            	<div class="input-group registration-date-time">
+            		<span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-calendar" aria-hidden="true"> Entrada</span></span>
+            		<input class="form-control" name="fecha_entrada" id="registration-date" type="date">
+                    <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-calendar" aria-hidden="true"> Salida</span></span>
+            	    <input class="form-control" name="fecha_salida" id="registration-date" type="date">
+                     <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-user" aria-hidden="true"> Adultos</span></span>
+					 <input class="form-control" name="Numero_Adultos" id="registration-date" type="Number">
+					  </button>
+					 <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-user" aria-hidden="true"> Niños</span></span>
+					 <input class="form-control" name="Numero_Niños" id="registration-date" type="Number">
+            		<span class="input-group-btn">
+            	    	{{!-- <button class="btn btn-default" type="button" onclick="addNow()"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Now</button>
+                    	<button class="btn btn-default" type="button" onclick="stopNow()"><span class="glyphicon glyphicon-minus-sign" aria-hidden="true"></span> Stop</button> --}}
+                    </span>
+            	</div>
+            </div>
+        </form>
+	</div>
+</div>

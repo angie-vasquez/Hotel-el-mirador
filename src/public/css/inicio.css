@@ -7,8 +7,28 @@
     text-align: center;
     background: rgba(255,255,255,.2);
     box-shadow:  0 5px  15px rgba(250, 248, 248, 0.5);
-  
+    display: flex;
+    align-items: center;
     line-height: 500px;
+    height: 50vh;
+    padding: 0 320px;
 
+}
+.caja{
+    outline: none;
+    display: block;
+    width: 100%;
+    padding: 10px 75px;
+    margin: 0 0 20px 0;
+    background: rgba(0,0,0,.5);
+    color: #fff;
+    border: none;
+    border-radius: 2px;
+    box-sizing: border-box;
+    font-family: Roboto;
+    font-size: 18px;
+    font-weight:normal;
+    transition: all .5s ease;
+    text-align: center;
 }
 

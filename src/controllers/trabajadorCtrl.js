@@ -1,23 +1,28 @@
 
 const Trabajador = require('../models/Trabajador')
 
-function agregarTrabajador(req, res){
+function obtenerReserva(req, res){
 
 
 }
 
-function editarTrabajador(req,res){
-
+function buscarReserva(req,res){
 
 }
 
-function eliminarTrabajador(req,res){
+function eliminarReserva(req,res){
+}
+function editarReserva(req,res){
 
-
+}
+function generarFactura(req,res){
+    
 }
 module.exports={
-agregarTrabajador,
-editarTrabajador,
-eliminarTrabajador
+obtenerReserva,
+buscarReserva,
+eliminarReserva,
+editarReserva,
+generarFactura
 
 }
