@@ -1,0 +1,595 @@
+body {
+	background: #e3e4eb;
+	font-family: 'Open Sans', sans-serif;
+}
+a:hover, a:focus {
+	text-decoration: none;
+}
+.ml-15 {
+	margin-left: 15px;
+}
+.content-settings {
+	background: #fff;
+	width: 100%;
+	margin-bottom: 20px;
+}
+.content-settings:before, .content-settings:after {
+	content: '';
+	display: table;
+}
+.content-settings:after {
+	clear: both;
+}
+.content-settings .sort-button {
+	float: left;
+	position: relative;
+}
+.content-settings .sort-button.last a, .content-settings .sort-button.last label {
+	border-right: 1px solid #ededed;
+}
+.content-settings .sort-button a {
+	padding: 18px 15px;
+	display: block;
+	float: left;
+	border-left: 1px solid #ededed;
+	transition: 0.2s ease-in;
+}
+.content-settings .sort-button a:hover {
+	background: #f3f4f7;
+}
+.content-settings .sort-button a span {
+	color: #000;
+}
+.content-settings .sort-button a i {
+	margin-left: 10px;
+	color: #1d79d6;
+}
+.content-settings .sort-button input {
+	display: none;
+}
+.content-settings .sort-button input:checked ~ label:before {
+	background: #1d79d6;
+	border-color: #1d79d6;
+}
+.content-settings .sort-button input:checked ~ label:after {
+	opacity: 1;
+}
+.content-settings .sort-button label {
+	margin: 0;
+	padding: 18px 15px 18px 35px;
+	border-left: 1px solid #ededed;
+	cursor: pointer;
+   /* Disable Text Selecting */
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+.content-settings .sort-button label:before {
+	content: '';
+	width: 15px;
+	height: 15px;
+	border-radius: 2px;
+	position: absolute;
+	z-index: 1;
+	left: 12px;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	background: #fff;
+	border: 1px solid #ced7de;
+	transition: 0.2s ease-in;
+}
+.content-settings .sort-button label:after {
+	content: '';
+	width: 11px;
+	height: 10px;
+	position: absolute;
+	z-index: 2;
+	left: 14px;
+	top: 1px;
+	bottom: 0;
+	margin: auto;
+	background: url('http://svgshare.com/i/2uf.svg') no-repeat 50% 50%;
+	opacity: 0;
+	transition: 0.2s ease-in;
+}
+.content-settings .sort-button label:hover {
+	background: #f3f4f7;
+}
+.content-settings .sort-button label:hover:before {
+	border-color: #1d79d6;
+}
+.content-settings .view-icons {
+	padding: 17px 15px;
+}
+.content-settings .view-icons .btn {
+	padding: 0;
+	width: 32px;
+	height: 20px;
+	box-shadow: none;
+	opacity: 0.15;
+	margin-top: 0;
+	transition: 0.2s ease-in;
+	color: #000;
+	font-size: 25px;
+	line-height: 0;
+}
+.content-settings .view-icons .btn:before, .content-settings .view-icons .btn:after {
+	display: none;
+}
+.content-settings .view-icons .btn:hover {
+	opacity: 1;
+}
+.content-settings .view-icons .btn.active {
+	opacity: 1;
+}
+.content-settings .view-icons .btn:last-child {
+	margin-left: 5px;
+}
+.grid {
+	width: 60%;
+	min-width: 880px;
+	max-width: 920px;
+	margin: auto;
+}
+.list-view .grid-item {
+	background: #fff;
+	width: 100%;
+	margin-bottom: 15px;
+	box-shadow: 0 1px 3px rgba(108, 118, 123, 0.15);
+}
+.list-view .grid-item:before, .list-view .grid-item:after {
+	content: '';
+	display: table;
+}
+.list-view .grid-item:after {
+	clear: both;
+}
+.list-view .grid-item .image {
+	float: left;
+	width: 26%;
+}
+.list-view .grid-item .image .image-block {
+	width: 100%;
+	background-image: url('https://image.ibb.co/gF6Cbv/room1_3x.png');
+	background-repeat: no-repeat;
+	background-position: 80% 50%;
+	background-size: cover;
+	min-height: 175px;
+}
+.list-view .grid-item .content {
+	float: left;
+	width: 74%;
+	padding: 15px;
+	max-height: 175px;
+}
+.list-view .grid-item .content:before, .list-view .grid-item .content:after {
+	content: '';
+	display: table;
+}
+.list-view .grid-item .content:after {
+	clear: both;
+}
+.list-view .grid-item .content .part1 {
+	width: 55%;
+	float: left;
+}
+.list-view .grid-item .content .part2 {
+	width: 45%;
+	float: left;
+}
+.list-view .grid-item .content .title {
+	color: #000;
+	font-size: 20px;
+	font-weight: 700;
+	margin-bottom: 10px;
+	display: flex;
+	align-items: center;
+}
+.list-view .grid-item .content .title:before, .list-view .grid-item .content .title:after {
+	content: '';
+	display: table;
+}
+.list-view .grid-item .content .title:after {
+	clear: both;
+}
+.list-view .grid-item .content .title span {
+	float: left;
+}
+.list-view .grid-item .content .title .item-label {
+	margin-left: 5px;
+}
+.list-view .grid-item .content .title .item-label .icon-label {
+	width: 15px;
+	height: 20px;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	background-size: contain;
+}
+.list-view .grid-item .content .title .item-label.top-deal .icon-label {
+	background-image: url('http://svgshare.com/i/2te.svg');
+}
+.list-view .grid-item .content .title .item-label.best-price .icon-label {
+	background-image: url('http://svgshare.com/i/2ry.svg');
+}
+.list-view .grid-item .content .title .hotel-rating {
+	float: left;
+	margin-left: 10px;
+}
+.list-view .grid-item .content .title .hotel-rating img {
+	width: 20px;
+	float: left;
+}
+.list-view .grid-item .content .title .hotel-rating .rating {
+	float: left;
+	font-size: 14px;
+	color: #1d79d6;
+	margin-left: 5px;
+}
+.list-view .grid-item .content .rating-line {
+	display: flex;
+	align-items: center;
+}
+.list-view .grid-item .content .rating-line .stars {
+	max-width: 80px;
+	margin-right: 20px;
+}
+.list-view .grid-item .content .rating-line .rate {
+	max-width: 100px;
+	display: flex;
+	align-items: center;
+	margin-right: 5px;
+}
+.list-view .grid-item .content .rating-line .rate img {
+	width: 100%;
+}
+.list-view .grid-item .content .rating-line .reviews a {
+	font-size: 12px;
+	color: #00c2ff;
+	text-decoration: underline;
+}
+.list-view .grid-item .content .rating-line .reviews a:hover {
+	text-decoration: none;
+}
+.list-view .grid-item .content .rooms-count {
+	color: #ff1818;
+	font-weight: 600;
+	margin-top: 10px;
+}
+.list-view .grid-item .content .rooms-count.not-active {
+	opacity: 0;
+	visibility: hidden;
+}
+.list-view .grid-item .content .location {
+	margin-top: 10px;
+}
+.list-view .grid-item .content .distance {
+	display: flex;
+	align-items: center;
+	margin-top: 4px;
+}
+.list-view .grid-item .content .distance .number {
+	float: left;
+	width: 23px;
+	height: 23px;
+	text-align: center;
+	font-weight: 500;
+	line-height: 20px;
+	border: 2px solid #000;
+	border-radius: 50%;
+	margin-right: 5px;
+}
+.list-view .grid-item .content .price {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+}
+.list-view .grid-item .content .price .old-price {
+	font-size: 14px;
+	color: #ff0505;
+	text-decoration: line-through;
+	margin-right: 5px;
+	margin-top: 2px;
+}
+.list-view .grid-item .content .price .new-price {
+	font-size: 30px;
+	font-weight: 600;
+}
+.list-view .grid-item .content .price .new-price .slash {
+	font-size: 22px;
+}
+.list-view .grid-item .content .price .new-price .day {
+	font-size: 12px;
+}
+.list-view .grid-item .content .view-btn {
+	margin-top: 15px;
+	margin-bottom: 15px;
+	text-align: right;
+	height: 29px;
+}
+.list-view .grid-item .content .view-btn .view {
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 12px;
+	font-weight: 700;
+	padding: 6px 30px;
+	height: 100%;
+	border-radius: 2px;
+	text-decoration: none;
+	transition: all 0.4s ease-in-out;
+	background: rgba(250, 104, 106, 1);
+	background: -moz-linear-gradient(left, rgba(250, 104, 106, 1) 0%, rgba(252, 114, 23, 1) 100%);
+	background: -webkit-gradient(left top, right top, color-stop(0%, rgba(250, 104, 106, 1)), color-stop(100%, rgba(252, 114, 23, 1)));
+	background: -webkit-linear-gradient(left, rgba(250, 104, 106, 1) 0%, rgba(252, 114, 23, 1) 100%);
+	background: -o-linear-gradient(left, rgba(250, 104, 106, 1) 0%, rgba(252, 114, 23, 1) 100%);
+	background: -ms-linear-gradient(left, rgba(250, 104, 106, 1) 0%, rgba(252, 114, 23, 1) 100%);
+	background: linear-gradient(to right, rgba(250, 104, 106, 1) 0%, rgba(252, 114, 23, 1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fa686a', endColorstr='#fc7217', GradientType=1);
+	background-size: 100% 100%;
+}
+.list-view .grid-item .content .view-btn .view:hover {
+	background-size: 200% 200%;
+}
+.list-view .grid-item .content .book-text {
+	text-align: right;
+	font-size: 13px;
+	margin-top: 5px;
+}
+.list-view .grid-item .content .looking-text {
+	text-align: right;
+	font-size: 13px;
+	margin-top: 5px;
+}
+.grid-view .grid-item {
+	background: #fff;
+	width: calc((100% - 15px)/ 2);
+	float: left;
+	margin-bottom: 15px;
+	box-shadow: 0 1px 3px rgba(108, 118, 123, 0.15);
+}
+.grid-view .grid-item:before, .grid-view .grid-item:after {
+	content: '';
+	display: table;
+}
+.grid-view .grid-item:after {
+	clear: both;
+}
+.grid-view .grid-item .image {
+	float: left;
+	width: 100%;
+}
+.grid-view .grid-item .image .image-block {
+	width: 100%;
+	background-image: url('https://image.ibb.co/gF6Cbv/room1_3x.png');
+	background-repeat: no-repeat;
+	background-position: 80% 50%;
+	background-size: cover;
+	min-height: 175px;
+}
+.grid-view .grid-item .content {
+	float: left;
+	width: 100%;
+	padding: 15px;
+	max-height: 175px;
+}
+.grid-view .grid-item .content:before, .grid-view .grid-item .content:after {
+	content: '';
+	display: table;
+}
+.grid-view .grid-item .content:after {
+	clear: both;
+}
+.grid-view .grid-item .content .part1 {
+	width: 100%;
+	float: left;
+	padding-bottom: 10px;
+}
+.grid-view .grid-item .content .part2 {
+	width: 100%;
+	float: left;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	position: relative;
+}
+.grid-view .grid-item .content .part2:before {
+	content: '';
+	border-top: 1px solid #e5e5e5;
+	position: absolute;
+	top: 0;
+	left: 0;
+	left: -15px;
+	right: 0;
+	width: calc(100% + 30px);
+}
+.grid-view .grid-item .content .title {
+	color: #000;
+	font-size: 20px;
+	font-weight: 700;
+	margin-bottom: 10px;
+	display: flex;
+	align-items: center;
+}
+.grid-view .grid-item .content .title:before, .grid-view .grid-item .content .title:after {
+	content: '';
+	display: table;
+}
+.grid-view .grid-item .content .title:after {
+	clear: both;
+}
+.grid-view .grid-item .content .title span {
+	float: left;
+}
+.grid-view .grid-item .content .title .item-label {
+	margin-left: 5px;
+}
+.grid-view .grid-item .content .title .item-label .icon-label {
+	width: 15px;
+	height: 20px;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	background-size: contain;
+}
+.grid-view .grid-item .content .title .item-label.top-deal .icon-label {
+	background-image: url('http://svgshare.com/i/2te.svg');
+}
+.grid-view .grid-item .content .title .item-label.best-price .icon-label {
+	background-image: url('http://svgshare.com/i/2ry.svg');
+}
+.grid-view .grid-item .content .title .hotel-rating {
+	float: left;
+	margin-left: 10px;
+}
+.grid-view .grid-item .content .title .hotel-rating img {
+	width: 20px;
+	float: left;
+}
+.grid-view .grid-item .content .title .hotel-rating .rating {
+	float: left;
+	font-size: 14px;
+	color: #1d79d6;
+	margin-left: 5px;
+}
+.grid-view .grid-item .content .rating-line {
+	display: flex;
+	align-items: center;
+}
+.grid-view .grid-item .content .rating-line .stars {
+	max-width: 80px;
+	margin-right: 30px;
+}
+.grid-view .grid-item .content .rating-line .rate {
+	max-width: 100px;
+	display: flex;
+	align-items: center;
+	margin-right: 5px;
+}
+.grid-view .grid-item .content .rating-line .rate img {
+	width: 100%;
+}
+.grid-view .grid-item .content .rating-line .reviews a {
+	font-size: 12px;
+	color: #00c2ff;
+	text-decoration: underline;
+}
+.grid-view .grid-item .content .rating-line .reviews a:hover {
+	text-decoration: none;
+}
+.grid-view .grid-item .content .rooms-count {
+	display: none;
+	color: #ff1818;
+	font-weight: 600;
+	margin-top: 10px;
+}
+.grid-view .grid-item .content .rooms-count.not-active {
+	opacity: 0;
+	visibility: hidden;
+}
+.grid-view .grid-item .content .location {
+	margin-top: 10px;
+}
+.grid-view .grid-item .content .distance {
+	display: none;
+	align-items: center;
+	margin-top: 4px;
+}
+.grid-view .grid-item .content .distance .number {
+	float: left;
+	width: 23px;
+	height: 23px;
+	text-align: center;
+	font-weight: 500;
+	line-height: 20px;
+	border: 2px solid #000;
+	border-radius: 50%;
+	margin-right: 5px;
+}
+.grid-view .grid-item .content .price {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+}
+.grid-view .grid-item .content .price .old-price {
+	font-size: 14px;
+	color: #ff0505;
+	text-decoration: line-through;
+	margin-right: 5px;
+	margin-top: 2px;
+}
+.grid-view .grid-item .content .price .new-price {
+	font-size: 30px;
+	font-weight: 600;
+}
+.grid-view .grid-item .content .price .new-price .slash {
+	font-size: 22px;
+}
+.grid-view .grid-item .content .price .new-price .day {
+	font-size: 12px;
+}
+.grid-view .grid-item .content .view-btn {
+	margin-top: 15px;
+	margin-bottom: 15px;
+	text-align: right;
+	height: 29px;
+	display: flex;
+	align-items: center;
+}
+.grid-view .grid-item .content .view-btn .view {
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 12px;
+	font-weight: 700;
+	padding: 6px 30px;
+	height: 100%;
+	border-radius: 2px;
+	text-decoration: none;
+	transition: all 0.4s ease-in-out;
+	background: rgba(250, 104, 106, 1);
+	background: -moz-linear-gradient(left, rgba(250, 104, 106, 1) 0%, rgba(252, 114, 23, 1) 100%);
+	background: -webkit-gradient(left top, right top, color-stop(0%, rgba(250, 104, 106, 1)), color-stop(100%, rgba(252, 114, 23, 1)));
+	background: -webkit-linear-gradient(left, rgba(250, 104, 106, 1) 0%, rgba(252, 114, 23, 1) 100%);
+	background: -o-linear-gradient(left, rgba(250, 104, 106, 1) 0%, rgba(252, 114, 23, 1) 100%);
+	background: -ms-linear-gradient(left, rgba(250, 104, 106, 1) 0%, rgba(252, 114, 23, 1) 100%);
+	background: linear-gradient(to right, rgba(250, 104, 106, 1) 0%, rgba(252, 114, 23, 1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fa686a', endColorstr='#fc7217', GradientType=1);
+	background-size: 100% 100%;
+}
+.grid-view .grid-item .content .view-btn .view:hover {
+	background-size: 200% 200%;
+}
+.grid-view .grid-item .content .book-text {
+	display: none;
+	text-align: right;
+	font-size: 13px;
+	margin-top: 5px;
+}
+.grid-view .grid-item .content .looking-text {
+	display: none;
+	text-align: right;
+	font-size: 13px;
+	margin-top: 5px;
+}
+.stars-hotel {
+	padding: 0;
+	margin: 0;
+}
+.stars-hotel:before, .stars-hotel:after {
+	content: '';
+	display: table;
+}
+.stars-hotel:after {
+	clear: both;
+}
+.stars-hotel li {
+	display: inline-block;
+	float: left;
+}
+.stars-hotel li i.fa-star {
+	color: #000;
+	font-size: 12px;
+	margin-left: 1px;
+	margin-right: 3px;
+}

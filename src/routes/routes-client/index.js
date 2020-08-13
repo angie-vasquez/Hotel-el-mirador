@@ -47,14 +47,21 @@ router.get('/Contactos',(req,res) => {
     res.render('Layouts/outside/Contacto')
 })
 
-router.get('/Login/Administrador',(req,res) => {
-     
-    res.send('Muestra la ventana del administrador')
+router.get('/Administrador',(req,res) => {
+    
+    res.render('Layouts/outside/Administrador')
 })
-router.get('/Administrador/dashboard',(req,res) => {
+router.get('/ListaHabitacion',(req,res) => {
      
-    res.send('Muestra habitaciones, clientes disponibles y reservaciones hechas')
+    res.render('Layouts/outside/ListaHabitacion')
+})
+router.get('/ReservacionRegistro',(req,res) => {
+     
+    res.render('Layouts/outside/ReservacionRegistro')
+})
 
+router.get('/AdmiDashboard',(req,res) => {
+     res.render('Layouts/outside/AdmiDashboard')
 })
 
 router.get('/Administrador/Configuracion',(req,res) => {
@@ -70,9 +77,9 @@ router.get('/Administrador/habitaciones',(req,res) => {
      
     res.send('Este es el r!!')
 })
-router.get('/Administrador/Usuarios',(req,res) => {
-     
-    res.send('Este es el r!!')
+router.get('/Usuarios',(req,res) => {
+
+    res.render('Layouts/outside/Usuarios')
 })
 router.get('/Administrador/Mantenimiento/habitaciones',(req,res) => {
      

@@ -14,11 +14,63 @@
     padding: 0 320px;
 
 }
+#menu form {
+	padding: 60px 150px;
+}
+/*letras afuera*/
+ #menu label {
+	 color: #fff;
+	 text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+}
+/*cuadritos*/
+ #menu input[type="date"], #menu select {
+	 padding: 15px;
+	 background: rgba(255, 255, 255, 0.4);
+	 border: 1px solid #eee;
+	 border-radius: 3px;
+	 color: #fff;
+}
+ #menu input[type="date"]:focus, #menu select:focus {
+	 box-shadow: 0 0 0.5em rgba(238, 238, 238, .6);
+}
+ #menu option {
+	 color: #000;
+}
+ /* #menu input[type="checkbox"], #menu label[for="sinFecha"] {
+	 display: inline-block;
+	 margin: 0 0.3em 1em;
+	 line-height: 0.7em;
+	 font-style: italic;
+} */
+/*boton*/
+ #menu input[type="button"] {
+	 display: block;
+	 margin: 1em auto;
+	 padding: 0.7em 1.5em;
+	 font: bold 1.4em 'Montserrat', sans-serif;
+	 letter-spacing: -1px;
+	 color: #875f0d;
+	 background: #efbe57;
+	 border: none;
+	 box-shadow: 0 3px 0 #cd9113;
+	 border-radius: 3px;
+}
+ #menu input[type="button"]:hover {
+	 position: relative;
+	 top: -1px;
+	 box-shadow: 0 0 10px #f3d086, 0 3px 0 #cd9113;
+} 
+ #menu input[type="button"]:active {
+	 border-bottom: none;
+	 position: relative;
+	 top: 1px;
+}
+ 
 .caja{
     outline: none;
     display: block;
     width: 100%;
-    padding: 10px 75px;
+    padding: 3px 100px ;
     margin: 0 0 20px 0;
     background: rgba(0,0,0,.5);
     color: #fff;

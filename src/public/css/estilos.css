@@ -1,11 +1,10 @@
-* {
+ * {
     margin: 0;
     padding: 0;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
-
 body {
     background: url(../img/hotel.jpg);
     background-size: cover;
@@ -21,7 +20,7 @@ body {
     border-radius: 5px;
     color: #fff;
     position: relative;
-    /*padding: 40px;*/
+    padding: 40px;
 }
 
 .contenedor-form .toggle {
@@ -120,7 +119,7 @@ body {
 
 .contenedor-form .formulario:nth-child(2) {
     display: block;
-}
+} 
 .tipoDoc{
     outline: none;
     display: block;

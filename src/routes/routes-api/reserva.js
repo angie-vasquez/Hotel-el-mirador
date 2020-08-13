@@ -5,4 +5,6 @@ const{agregarReserva, editarReserva, eliminarReserva} = require('../../controlle
 routes.route('/addReserva').post(agregarReserva)
 routes.route('/editReserva').put(editarReserva)
 routes.route('/deleteReserva').delete(eliminarReserva)
+
+routes.route('/getReserva')
 module.exports= routes

@@ -19,7 +19,7 @@ const Habitacion = new Schema({
                 require: true 
         },
         Nro_Habitacion:{
-                type: Int, 
+                type: Number, 
                 require: true 
         },
         Precio:{
@@ -27,7 +27,7 @@ const Habitacion = new Schema({
                 require: true 
         },
         Nro_Piso:{
-                type: Int, 
+                type: Number, 
                 require: true 
 
         },

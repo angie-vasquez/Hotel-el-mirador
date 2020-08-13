@@ -1,5 +1,6 @@
     <link rel="stylesheet" href="css/estilosHome.css">
     <link rel="stylesheet" href="css/inicio.css">
+    
     {{> navbar}}
 
                 <div class="titulo">
@@ -9,7 +10,42 @@
                 <div class="contenedor">
                     </div>
                 <div class="caja">
-                    <form action="/home" method="POST">
+<div id="container" class="row">
+    
+    <div id="menu" class="large-5 columns">
+
+      <form action="#" class="small-12 small-centered columns">
+        <label for="fechaLlegada">Entrada</label>
+        <input type="date" id="fechaLlegada" />
+        <label for="fechaRegreso">Salida</label>
+        <input type="date" id="fechaRegreso"/>
+
+        <label >¿Quiénes irán?</label>
+        <select id="adultosInvitados" class="small-5 columns">
+          <option value="1">1 Adulto</option>
+          <option value="2">2 Adultos</option>
+          <option value="3">3 Adultos</option>
+          <option value="4">4 Adultos</option>
+          <option value="5">5 Adultos</option>
+        </select>
+        <select id="niñosInvitados" class="small-5 small-offset-2 columns">
+          <option value="0">-</option>
+          <option value="1">1 Niño</option>
+          <option value="2">2 Niños</option>
+          <option value="3">3 Niños</option>
+          <option value="4">4 Niños</option>
+          <option value="5">5 Niños</option>
+        </select>
+        {{!-- <input type="button" value="Buscar" /> --}}
+        <li><a href="/ListaHabitacion">Buscar</a></li>
+      </form>
+    </div>
+  </div>
+
+
+
+
+                    {{!-- <form action="/home" method="POST">
 
                     <label for="Fecha_ingreso">Entrada</label>
                     <input type="text" name="Fecha_ingreso"  placeholder="" required>
@@ -24,7 +60,7 @@
                     <input type="text" name="Numero_niños"  placeholder="" required>
 
                     <input type="submit" value="Continuar">
-                    </form>
+                    </form> --}}
 
 
                 </div>

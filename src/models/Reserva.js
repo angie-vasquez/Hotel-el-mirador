@@ -19,10 +19,7 @@ const Reserva = new Schema({
             type: Date,
             required: true  
           },
-          Fecha_reserva:{
-            type: Date,
-            required: true  
-          },         
+       
           Numero_niños:{
             type: Int,
             required: true             
@@ -32,7 +29,7 @@ const Reserva = new Schema({
             type: Int,
             required: true  
           },
-          Tipo_reserva:{
+          Tipo_Habitación:{
             type: String,
             required: true  
 
@@ -43,6 +40,11 @@ const Reserva = new Schema({
 
           },
           Estado:{
+            type: String,
+            required: true  
+
+          },
+          Numero_noches:{
             type: String,
             required: true  
 

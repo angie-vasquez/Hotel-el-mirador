@@ -45,6 +45,7 @@ app.use(express.static(path.join(__dirname, 'src/public')))
 app.use(require('./src/routes/routes-client/index'))
 //rutas api
 app.use(require('./src/routes/routes-api/login'))
+app.use(require('./src/routes/routes-api/habitacion'))
 //server listening
 
 
