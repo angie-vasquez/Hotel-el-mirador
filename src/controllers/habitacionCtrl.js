@@ -1,11 +1,29 @@
 
 const TipoHabitacion = require('../models/Tipohabitaciones')
+const Habitacion = require('../models/Habitación')
+
+async function getHabitaciones (req, res) {
+    console.log("las habitaciones")
+    const misHabitaciones = await Habitacion.find()
+    res.json(misHabitaciones)
+}
 
 
-function agregarHabitacion(req, res) {
-    const { } = req.body
-    console.log(`los datos a agregar: ${body}`)
-
+async function agregarHabitacion(req, res) {
+    const { Caracteristicas, Id_Tipo, Nro_Habitacion, Precio, Nro_Piso, Estado, Tipo_Habitacion } = req.body
+    console.log(`los datos a agregar: ${Caracteristicas}`)
+    const newHabitacion = new Habitacion({
+        Caracteristicas,
+        Id_Tipo,
+        Nro_Habitacion,
+        Precio,
+        Nro_Piso,
+        Estado,
+        Tipo_Habitacion
+    })
+    
+    let result = await newHabitacion.save()
+    res.json(result)
 }
 //req.query => envia un solo dato
 //req.body=> envia un objeto
@@ -21,20 +39,27 @@ function eliminarHabitacion(req, res) {
     const { params } = req
     console.log(`el id para eliminar: ${params}`)
 }
-async function getTipoHabitaciones(req, res) {
-    const tiposhabitaciones = await TipoHabitacion.find()
-    console.log(`id del tipo: ${params}`)
-    res.json(tiposhabitaciones)
+// async function getTipoHabitaciones(req, res) {
+//     const tiposhabitaciones = await TipoHabitacion.find()
+//     console.log(`id del tipo: ${params}`)
+//     res.json(tiposhabitaciones)
 
-}
+// }
 function getSelected(req, res) {
     const { } = req.body
     console.log(`agregando habitacion`)
 }
-function getHabitacionTipo(req, res) {
-    const { id } = req.params
-    console.log(`agregando habitacion`)
+
+
+async function getHabitacionTipo(req, res) {
+    const { idTipoHabitacion } = req.body
+    // console.log("lo que me esta llegando desde el cliente : ", idTipoHabitacion)
+    const misHabitaciones = await Habitacion.find({Id_Tipo: idTipoHabitacion})
+    // console.log(`lo que estoy recuperando!!! : ${misHabitaciones}`)
+    res.render('Layouts/outside/ListaHabitacion', {misHabitaciones})
 }
+
+
 
 async function NuevoTipoHabitacion(req, res) {
 
@@ -56,7 +81,8 @@ module.exports = {
     agregarHabitacion,
     editarHabitacion,
     eliminarHabitacion,
-    getTipoHabitaciones,
+    // getTipoHabitaciones,
+    getHabitaciones,
     getSelected,
     getHabitacionTipo,
     NuevoTipoHabitacion

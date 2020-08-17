@@ -1,36 +1,32 @@
 <link rel="stylesheet" href="css/estilosHome.css">
 
 <link rel="stylesheet" href="css/ListaHabitacion.css">
-{{!-- <div class="content-settings">
-  <div class="sort-button sort-price"><a class="low-high" href="javascript:void(0)" data-sort="price"><span>Price</span><i class="fa fa-sort-amount-desc" aria-hidden="true"></i></a></div>
-  <div class="sort-button guest-rating"><a class="low-high" href="javascript:void(0)" data-sort="guest_rating"><span>Guest Rating</span><i class="fa fa-sort-amount-asc" aria-hidden="true"></i></a></div>
-  <div class="sort-button recommended"><a class="low-high" href="javascript:void(0)" data-sort="recommended_rating"><span>Recommended</span><i class="fa fa-sort-amount-desc" aria-hidden="true"></i></a></div>
-  <div class="sort-button best-price">
-    <input id="best-price-guaranted" type="checkbox" data-sort="best-price"/>
-    <label for="best-price-guaranted">Best Price Guaranted</label>
-  </div> --}}
-  {{!-- <div class="sort-button last top-deal">
-    <input id="top-deal" type="checkbox" data-sort="top-deal"/>
-    <label for="top-deal">Top Deal</label>
-  </div> --}}
-  <div class="view-icons pull-right"><a class="btn list-btn active" href="javascript:void(0)"><i class="fa fa-th-list" aria-hidden="true"></i></a><a class="btn grid-btn" href="javascript:void(0)"><i class="fa fa-th" aria-hidden="true"></i></a></div>
+
+<div class="view-icons pull-right"><a class="btn list-btn active" href="javascript:void(0)"><i class="fa fa-th-list"
+      aria-hidden="true"></i></a><a class="btn grid-btn" href="javascript:void(0)"><i class="fa fa-th"
+      aria-hidden="true"></i></a></div>
 </div>
+
 <div class="grid list-view">
-  <div class="grid-item" data-filter="best-price" data-price="899" data-guest_rating="8.8" data-recommended_rating="4.84">
+
+  {{#each porentr}}
+  <div class="grid-item" data-filter="best-price" data-price="899" data-guest_rating="8.8"
+    data-recommended_rating="4.84">
     <div class="image">
-      <div class="image-block" style="background-image: url('https://i.picasion.com/pic90/5aeca922acb0495f2c88b6968f2900cc.gif');"></div>
+      <div class="image-block"
+        style="background-image: url('https://i.picasion.com/pic90/5aeca922acb0495f2c88b6968f2900cc.gif');"></div>
     </div>
     <div class="content">
       <div class="part1">
-        <div class="title"><span>Habitación simple</span>
+        <div class="title"><span>{{Tipo_Habitacion}}</span>
           <div class="item-label top-deal hidden">
             <div class="icon-label"></div>
           </div>
           <div class="item-label best-price">
             <div class="icon-label"></div>
           </div>
-          <div class="hotel-rating"><img src="http://svgshare.com/i/2tQ.svg" alt="smiling icon"/>
-            <div class="rating">8.8/10</div>
+          <div class="hotel-rating"><img src="http://svgshare.com/i/2tQ.svg" alt="smiling icon" />
+            <div class="rating">S/. {{Precio}}</div>
           </div>
         </div>
         <div class="rating-line">
@@ -47,196 +43,39 @@
           {{!--  --}}
         </div>
         <div class="rooms-count not-active"><span>Cuenta con una cama simple</span></div>
-        <div class="location"><span>485 Clawson St, Staten Island, NY 10306</span></div>
-       
+        <div class="location"><span>{{Caracteristicas}}</span></div>
+
       </div>
       <div class="part2">
         <div class="price">
           {{!-- <div class="old-price hidden"><span>$520</span></div> --}}
-          <div class="new-price"><span>s./30</span><span class="slash">/</span><span class="day">Día</span></div>
+          <div class="new-price"><span>s./{{Precio}}</span><span class="slash">/</span><span class="day">Día</span>
+          </div>
         </div>
         {{!-- <input type="button" value="Buscar" /> --}}
-          <div class="view-btn"><a class="view"  href="/ReservacionRegistro">Reservar</a></div>
-        <div class="book-text"><span>Booked 30 Times Today</span></div>
-        <div class="looking-text"><span>5 People Looking Right Now</span></div>
-      </div>
-    </div>
-  </div>
-  <div class="grid-item" data-price="745" data-guest_rating="7.2" data-recommended_rating="3.98">
-    <div class="image">
-      <div class="image-block" style="background-image: url('https://i.picasion.com/pic90/b1ce67dfcbb35c3815cfcdac5487984e.gif');"></div>
-    </div>
-    <div class="content">
-      <div class="part1">
-        <div class="title"><span>Habitación Simple</span>
-          <div class="item-label top-deal hidden">
-            <div class="icon-label"></div>
-          </div>
-          <div class="item-label best-price hidden">
-            <div class="icon-label"></div>
-          </div>
-          <div class="hotel-rating"><img src="http://svgshare.com/i/2tQ.svg" alt="smiling icon"/>
-            <div class="rating">7.2/10</div>
-          </div>
-        </div>
-        <div class="rating-line">
-          <div class="stars">
-            <ul class="stars-hotel" data-stars="4.85">
-              <li><i class="fa fa-star" aria-hidden="true"></i></li>
-              <li><i class="fa fa-star" aria-hidden="true"></i></li>
-              <li><i class="fa fa-star" aria-hidden="true"></i></li>
-              <li><i class="fa fa-star" aria-hidden="true"></i></li>
-              <li><i class="fa fa-star" aria-hidden="true"></i></li>
-              <li class="hidden"><i class="fa fa-star-half" aria-hidden="true"></i></li>
-            </ul>
-          </div>
+        {{#if Estado}}
+        <form action="/ReservacionRegistro" method="post">
+          <div class="view-btn">
+            <input type="hidden" name="idHabitacion" value="{{_id}}">
+            <input type="hidden" name="precio" value="{{Precio}}">
+            <input type="hidden" name="fecha_entrada" value="{{fecha_entrada}}">
+            <input type="hidden" name="fecha_salida" value="{{fecha_salida}}">
+            <input type="hidden" name="Nro_Habitacion" value="{{Nro_Habitacion}}">
+            <input type="submit" class="btn view " style="background: green !important;width: 50%" aria-disabled="true" value="Reservar">
+            {{!-- <a href="#" class="btn btn-primary btn-lg disabled" role="button" aria-disabled="true">Primary link</a> --}}
 
+          </div>
+        </form>
+        {{else}}
+        <div class="view-btn">
+
+          <a class="btn view disabled" style="background: red !important;" href="/ReservacionRegistro">Reservado</a>
         </div>
-        <div class="rooms-count not-active"><span>Only 5 rooms left on our site!</span></div>
-        <div class="location"><span>485 Clawson St, Staten Island, NY 10306</span></div>
-       
-      </div>
-      <div class="part2">
-        <div class="price">
-          
-          <div class="new-price"><span>S./30</span><span class="slash">/</span><span class="day">Día</span></div>
-        </div>
-            <div class="view-btn"><a class="view"  href="/ReservacionRegistro">Reservar</a></div>
-        <div class="book-text"><span>Booked 30 Times Today</span></div>
-        <div class="looking-text"><span>5 People Looking Right Now</span></div>
+        {{/if}}
+        <div class="book-text"><span>Reserve ya casero</span></div>
+        <div class="looking-text"><span>Reservaciones el tio walter</span></div>
       </div>
     </div>
   </div>
-  <div class="grid-item" data-filter="best-price" data-price="156" data-guest_rating="4.3" data-recommended_rating="4.54">
-    <div class="image">
-      <div class="image-block" style="background-image: url('https://image.ibb.co/gF6Cbv/room1_3x.png');"></div>
-    </div>
-    <div class="content">
-      <div class="part1">
-        <div class="title"><span>Habitación doble</span>
-          <div class="item-label top-deal hidden">
-            <div class="icon-label"></div>
-          </div>
-          <div class="item-label best-price">
-            <div class="icon-label"></div>
-          </div>
-          <div class="hotel-rating"><img src="http://svgshare.com/i/2tQ.svg" alt="smiling icon"/>
-            <div class="rating">4.3/10</div>
-          </div>
-        </div>
-        <div class="rating-line">
-          <div class="stars">
-            <ul class="stars-hotel" data-stars="2.17">
-              <li><i class="fa fa-star" aria-hidden="true"></i></li>
-              <li><i class="fa fa-star" aria-hidden="true"></i></li>
-              <li class="hidden"><i class="fa fa-star" aria-hidden="true"></i></li>
-              <li class="hidden"><i class="fa fa-star" aria-hidden="true"></i></li>
-              <li class="hidden"><i class="fa fa-star" aria-hidden="true"></i></li>
-              <li class="hidden"><i class="fa fa-star-half" aria-hidden="true"></i></li>
-            </ul>
-          </div>
-  
-        </div>
-        <div class="rooms-count"><span>Only 5 rooms left on our site!</span></div>
-        <div class="location"><span>485 Clawson St, Staten Island, NY 10306</span></div>
-       
-      </div>
-      <div class="part2">
-        <div class="price">
-          
-          <div class="new-price"><span>S./55</span><span class="slash">/</span><span class="day">Día</span></div>
-        </div>
-            <div class="view-btn"><a class="view"  href="/ReservacionRegistro">Reservar</a></div>
-        <div class="book-text"><span>Booked 30 Times Today</span></div>
-        <div class="looking-text"><span>5 People Looking Right Now</span></div>
-      </div>
-    </div>
-  </div>
-  <div class="grid-item" data-filter="best-price" data-price="300" data-guest_rating="5.5" data-recommended_rating="3.17">
-    <div class="image">
-      <div class="image-block" style="background-image: url('https://i.picasion.com/pic90/6da1506c71a229db26540f496c53b7d7.gif');"></div>
-    </div>
-    <div class="content">
-      <div class="part1">
-        <div class="title"><span>Habitación matrimonial</span>
-          <div class="item-label top-deal hidden">
-            <div class="icon-label"></div>
-          </div>
-          <div class="item-label best-price">
-            <div class="icon-label"></div>
-          </div>
-          <div class="hotel-rating"><img src="http://svgshare.com/i/2tQ.svg" alt="smiling icon"/>
-            <div class="rating">5.5/10</div>
-          </div>
-        </div>
-        <div class="rating-line">
-          <div class="stars">
-            <ul class="stars-hotel" data-stars="3.17">
-              <li><i class="fa fa-star" aria-hidden="true"></i></li>
-              <li><i class="fa fa-star" aria-hidden="true"></i></li>
-              <li><i class="fa fa-star" aria-hidden="true"></i></li>
-              <li class="hidden"><i class="fa fa-star" aria-hidden="true"></i></li>
-              <li class="hidden"><i class="fa fa-star" aria-hidden="true"></i></li>
-              <li class="hidden"><i class="fa fa-star-half" aria-hidden="true"></i></li>
-            </ul>
-          </div>
-        </div>
-        <div class="rooms-count not-active"><span>Only 5 rooms left on our site!</span></div>
-        <div class="location"><span>485 Clawson St, Staten Island, NY 10306</span></div>
-        
-      </div>
-      <div class="part2">
-        <div class="price">
-         
-          <div class="new-price"><span>S./55</span><span class="slash">/</span><span class="day">Día</span></div>
-        </div>
-            <div class="view-btn"><a class="view"  href="/ReservacionRegistro">Reservar</a></div>
-        <div class="book-text"><span>Booked 30 Times Today</span></div>
-        <div class="looking-text"><span>5 People Looking Right Now</span></div>
-      </div>
-    </div>
-  </div>
-  <div class="grid-item" data-filter="top-deal" data-price="240" data-guest_rating="7.0" data-recommended_rating="3.74">
-    <div class="image">
-      <div class="image-block" style="background-image: url('https://i.picasion.com/pic90/36e60c44e599a4c1b93e7d6f68eaa652.gif');"></div>
-    </div>
-    <div class="content">
-      <div class="part1">
-        <div class="title"><span>Habitación doble</span>
-          <div class="item-label top-deal">
-            <div class="icon-label"></div>
-          </div>
-          <div class="item-label best-price hidden">
-            <div class="icon-label"></div>
-          </div>
-          <div class="hotel-rating"><img src="http://svgshare.com/i/2tQ.svg" alt="smiling icon"/>
-            <div class="rating">7.0/10</div>
-          </div>
-        </div>
-        <div class="rating-line">
-          <div class="stars">
-            <ul class="stars-hotel" data-stars="3.17">
-              <li><i class="fa fa-star" aria-hidden="true"></i></li>
-              <li><i class="fa fa-star" aria-hidden="true"></i></li>
-              <li><i class="fa fa-star" aria-hidden="true"></i></li>
-              <li class="hidden"><i class="fa fa-star" aria-hidden="true"></i></li>
-              <li class="hidden"><i class="fa fa-star" aria-hidden="true"></i></li>
-              <li class="hidden"><i class="fa fa-star-half" aria-hidden="true"></i></li>
-            </ul>
-          </div>
-        </div>
-        <div class="rooms-count not-active"><span>Only 5 rooms left on our site!</span></div>
-        <div class="location"><span>485 Clawson St, Staten Island, NY 10306</span></div>
-     
-      </div>
-      <div class="part2">
-        <div class="price">
-          <div class="new-price"><span>S./40</span><span class="slash">/</span><span class="day">Día</span></div>
-        </div>
-        <div class="view-btn"><a class="view"  href="/ReservacionRegistro">Reservar</a></div>
-        <div class="book-text"><span>Booked 30 Times Today</span></div>
-        <div class="looking-text"><span>5 People Looking Right Now</span></div>
-      </div>
-    </div>
-  </div>
+  {{/each}}
 </div>

@@ -1,6 +1,6 @@
 const routes= require('express').Router()
 
-const{agregarHabitacion, editarHabitacion, eliminarHabitacion,NuevoTipoHabitacion,getHabitacionTipo,getSelected,getTipoHabitaciones} = require('../../controllers/habitacionCtrl')
+const{agregarHabitacion, editarHabitacion, eliminarHabitacion,NuevoTipoHabitacion,getHabitacionTipo,getSelected, getHabitaciones} = require('../../controllers/habitacionCtrl')
 
 //Acciones del Administrador
 routes.route('/addHabitacion').post(agregarHabitacion)
@@ -9,7 +9,7 @@ routes.route('/deleteHabitacion').delete(eliminarHabitacion)
 
 //Acciones del cliente
 //los tipos de habitaciones 
-routes.route('/getTipoHabitacion').get(getTipoHabitaciones)
+routes.route('/getHabitaciones').get(getHabitaciones)
 
 //trae habitaciones que estamos filtrando segun la peticion
 routes.route('/getSelected').post(getSelected)

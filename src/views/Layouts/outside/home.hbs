@@ -1,34 +1,34 @@
-    <link rel="stylesheet" href="css/estilosHome.css">
-    <link rel="stylesheet" href="css/inicio.css">
-    
-    {{> navbar}}
+<link rel="stylesheet" href="css/estilosHome.css">
+<link rel="stylesheet" href="css/inicio.css">
 
-                <div class="titulo">
-                <h1>BIENVENIDO AL HOTEL EL MIRADOR</h1>
+{{> navbar}}
 
-                </div>
-                <div class="contenedor">
-                    </div>
-                <div class="caja">
-<div id="container" class="row">
-    
+<div class="titulo">
+  <h1>BIENVENIDO AL HOTEL EL MIRADOR</h1>
+
+</div>
+<div class="contenedor">
+</div>
+<div class="caja">
+  <div id="container" class="row">
+
     <div id="menu" class="large-5 columns">
 
-      <form action="#" class="small-12 small-centered columns">
+      <form action="/buscarHabitacionDisponible" method="POST" class="small-12 small-centered columns">
         <label for="fechaLlegada">Entrada</label>
-        <input type="date" id="fechaLlegada" />
+        <input type="date" name="fecha_entrada" id="fechaLlegada" />
         <label for="fechaRegreso">Salida</label>
-        <input type="date" id="fechaRegreso"/>
+        <input type="date" name="fecha_salida" id="fechaRegreso" />
 
-        <label >¿Quiénes irán?</label>
-        <select id="adultosInvitados" class="small-5 columns">
+        <label>¿Quiénes irán?</label>
+        <select id="adultosInvitados" name="nro_adultos" class="small-5 columns">
           <option value="1">1 Adulto</option>
           <option value="2">2 Adultos</option>
           <option value="3">3 Adultos</option>
           <option value="4">4 Adultos</option>
           <option value="5">5 Adultos</option>
         </select>
-        <select id="niñosInvitados" class="small-5 small-offset-2 columns">
+        <select id="niñosInvitados" name="nro_menores" class="small-5 small-offset-2 columns">
           <option value="0">-</option>
           <option value="1">1 Niño</option>
           <option value="2">2 Niños</option>
@@ -37,7 +37,9 @@
           <option value="5">5 Niños</option>
         </select>
         {{!-- <input type="button" value="Buscar" /> --}}
-        <li><a href="/ListaHabitacion">Buscar</a></li>
+        <li>
+          <input type="submit" class="btn btn-success" value="Buscar">
+        </li>
       </form>
     </div>
   </div>
@@ -45,7 +47,7 @@
 
 
 
-                    {{!-- <form action="/home" method="POST">
+  {{!-- <form action="/home" method="POST">
 
                     <label for="Fecha_ingreso">Entrada</label>
                     <input type="text" name="Fecha_ingreso"  placeholder="" required>
@@ -63,4 +65,4 @@
                     </form> --}}
 
 
-                </div>
+</div>

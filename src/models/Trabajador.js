@@ -2,9 +2,10 @@
 
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
+const bcrypt = require('bcryptjs')
 
-const Trabajador= new Schema ({
-    login: {
+const Trabajador = new Schema({
+    usuario: {
         type: String,
         requiere: true
     },
@@ -16,7 +17,17 @@ const Trabajador= new Schema ({
         type: String,
         requiere: true
     },
-    persona :{ type: Schema.ObjectId,ref: "Persona"}
+    // persona :{ type: Schema.ObjectId,ref: "Persona"}
 })
 
-module.exports = mongoose.model ('trabajador', Trabajador)
+Trabajador.methods.encryptPassword = async (password) => {
+    const salt = await bcrypt.genSalt(10)
+    const hash = bcrypt.hash(password, salt)
+    return hash
+}
+
+Trabajador.methods.matchPassword = async function (password) {
+    return await bcrypt.compare(password, this.password)
+}
+
+module.exports = mongoose.model('Trabajador', Trabajador)

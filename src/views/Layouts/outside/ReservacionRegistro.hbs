@@ -1,97 +1,96 @@
 <link rel="stylesheet" href="css/ReservacionRegistro.css">
-<!DOCTYPE html>
-<html>
+
+
+  <link type="text/css" rel="stylesheet" href="css.css" media="screen,projection" />
 
 
 
-<head>
-    <meta charset="UTF-8">
-    <title>Formulario</title>
-    <!--Importar css-->
-    <link type="text/css" rel="stylesheet" href="css.css" media="screen,projection" />
-</head>
-<script>
-    myFunction(){
-        alert("Gracias por realizar la reserva");
-    }
-</script>
- 
-   
+
+  {{#each errors}}
+  <div class="alert alert-danger alert-dismissible fade show mt-5" role="alert">
+    {{text}}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  {{/each}}
+
 <div class="right-contains">
-   <p class="text-bold">Dealles de reserva</p>
-     <ul class="dashed-list">
-       <li>
-          Todos los demás artículos serán pagados a través de PayPal.
-       </li>
-     </ul>
-  <ul class="productList paypalItems">
+  <p class="text-bold">Dealles de reserva</p>
+  <ul class="dashed-list">
     <li>
-      Otros Productos <span class="priceList">$999.00</span>
+      Todos los demás artículos serán pagados a través de PayPal.
     </li>
-    <li class="text-semibold">
-      Envio <span class="priceList text-semibold">$35.00</span>
+  </ul>
+  <ul class="productList paypalItems">
+    <li class="text-bold">
+      Subtotal <span class="priceList">S/. {{precio}}</span>
     </li>
     <li class="text-bold">
-      Subtotal <span class="priceList">$1,034.00</span>
+      Igv <span class="priceList">S/. {{Igv}}</span>
     </li>
   </ul>
   <ul class="productList product-total">
-    <li>Total a pagar con PayPal <span class="priceList">$120.00</span></li>
+    <li>Total a pagar <span class="priceList">S/. {{Total}}</span></li>
   </ul>
 </div>
-</div>
-<body>
-  <header>
-  </header>
+
+
   <main>
-    <form>
-        <div>
-            
+    <form action="addReserva" method="POST">
+      <div>
 
-            <label>N° de documento: </label>
-            <input type="text" name="nombre" placeholder="Nombre" required>
-            <br />
-            <label>Nombre: </label>
-            <input type="text" name="nombre" placeholder="Nombre" required>
-            <br />
-            <label>Apellidos: </label>
-            <input type="text" name="apellidos" placeholder="Apellidos" required>
-            <br />
-            <label>Telefono: </label>
-            <input type="tel" name="telf" placeholder="Telefono" pattern="^[9|6]\d{8}$" required> <!--Nueve digitos empezado por 9 o 6-->
-            <br />
-            <label>Correo: </label>
-            <input type="email" name="mail" placeholder="Correo" required>
-            <br />
-            <label>Nº de noches: </label>
+
+        <label>N° de documento: </label>
+        <input type="text" name="Nro_documento" placeholder="Nombre" required>
+        <br />
+        <label>Nombre: </label>
+        <input type="text" name="Nombre" placeholder="Nombre" required>
+        <br />
+        <label>Apellidos: </label>
+        <input type="text" name="Apellidos" placeholder="Apellidos" required>
+        <br />
+        <label>Telefono: </label>
+        <input type="tel" name="Telefono" placeholder="Telefono" pattern="^[9|6]\d{8}$" required>
+        <!--Nueve digitos empezado por 9 o 6-->
+        <br />
+        <label>Correo: </label>
+        <input type="email" name="correo" placeholder="Correo" required>
+        <br />
+        {{!-- <label>Nº de noches: </label>
             <input type="text" name="noches" placeholder="Nº Noches">
-            <br />
-            <label>Fecha de entrada: </label>
-            <input type="date" name="fecha">
-            <br />
-           <label>Fecha de Salida: </label>
-            <input type="date" name="fecha">
-            <br />
+            <br /> --}}
+        <label>Fecha de entrada: </label>
+        <input type="date" name="Fecha_ingreso" >
+        <br />
+        <label>Fecha de Salida: </label>
+        <input type="date" name="Fecha_salida" >
+        <br />
 
-            <br /><br />
+        <input type="hidden" name="id_Habitacion" value="{{idHabitacion}}">
+        <input type="hidden" name="Costo_Alojamiento" value="{{Total}}">
+        <input type="hidden" name="Igv" value="{{Igv}}">
+        <input type="hidden" name="precio" value="{{precio}}">
+        <input type="hidden" name="Nro_Habitacion" value="{{Nro_Habitacion}}">
+        {{!-- <input type="hidden" name="Estado" value=""> --}}
+
+
+        {{!-- <br /><br />
             <label>Tipo de habitacion: </label>
             <input type="radio" name="hab" value="simple"> Simple
             <input type="radio" name="hab" value="doble"> Doble
             <input type="radio" name="hab" value="matrimonio"> Matrimonio
-            <br /><br />
-           
-            <label>Comentarios:</label>
-            <br />
-            <textarea></textarea>
-            <br /><br />
-            <center>
-                <input type="reset" value="Borrar">
-                <input type="submit" value="Enviar"  onclick="myFunction()">
-            </center>
+            <br /><br /> --}}
 
-        </div>
+        {{!-- <label>Comentarios:</label> --}}
+        {{!-- <br />
+            <textarea></textarea>
+            <br /><br /> --}}
+        <center>
+          <input type="reset" value="Borrar">
+          <input type="submit" value="Enviar" >
+        </center>
+
+      </div>
     </form>
   </main>
-</body>
-
-</html>

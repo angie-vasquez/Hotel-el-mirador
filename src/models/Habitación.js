@@ -6,15 +6,11 @@ const Schema = mongoose.Schema
 
 const Habitacion = new Schema({
         
-        Id_habitación:{
+        Caracteristicas:{
                 type: String, 
                 require: true 
         },
-        Características:{
-                type: String, 
-                require: true 
-        },
-        Tipo_Habitacion:{
+        Id_Tipo:{
                 type: String, 
                 require: true 
         },
@@ -29,11 +25,15 @@ const Habitacion = new Schema({
         Nro_Piso:{
                 type: Number, 
                 require: true 
-
         },
         Estado:{
-                type: Int, 
+                type: Boolean, 
                 require: true 
-        }
+        },
+        Tipo_Habitacion:{
+                type: String, 
+                require: true 
+        },
 })
+
 module.exports= mongoose.model('Habitacion',Habitacion)

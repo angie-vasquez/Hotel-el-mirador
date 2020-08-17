@@ -6,7 +6,7 @@ const Schema= mongoose.Schema
 
 const Tipohabitacion= new Schema({
      titulo:{type: String , require: true},
-     descripcon:{type: String , require: true},
+     descripcion:{type: String , require: true},
      imagenUrl:{type: String , require: true},
 })
 
