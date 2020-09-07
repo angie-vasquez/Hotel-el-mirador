@@ -2,6 +2,8 @@
 
 <link rel="stylesheet" href="css/ListaHabitacion.css">
 
+
+
 <div class="view-icons pull-right"><a class="btn list-btn active" href="javascript:void(0)"><i class="fa fa-th-list"
       aria-hidden="true"></i></a><a class="btn grid-btn" href="javascript:void(0)"><i class="fa fa-th"
       aria-hidden="true"></i></a></div>
@@ -14,7 +16,7 @@
     data-recommended_rating="4.84">
     <div class="image">
       <div class="image-block"
-        style="background-image: url('https://i.picasion.com/pic90/5aeca922acb0495f2c88b6968f2900cc.gif');"></div>
+        style="background-image: url('{{urlImage}}');"></div>
     </div>
     <div class="content">
       <div class="part1">
@@ -26,6 +28,7 @@
             <div class="icon-label"></div>
           </div>
           <div class="hotel-rating"><img src="http://svgshare.com/i/2tQ.svg" alt="smiling icon" />
+          {{!-- {{urlImage}}sdfsdf --}}
             <div class="rating">S/. {{Precio}}</div>
           </div>
         </div>
@@ -49,7 +52,7 @@
       <div class="part2">
         <div class="price">
           {{!-- <div class="old-price hidden"><span>$520</span></div> --}}
-          <div class="new-price"><span>s./{{Precio}}</span><span class="slash">/</span><span class="day">Día</span>
+          <div class="new-price"><span>s./{{Precio}} </span><span class="slash">/</span><span class="day">Día</span>
           </div>
         </div>
         {{!-- <input type="button" value="Buscar" /> --}}
@@ -72,8 +75,8 @@
           <a class="btn view disabled" style="background: red !important;" href="/ReservacionRegistro">Reservado</a>
         </div>
         {{/if}}
-        <div class="book-text"><span>Reserve ya casero</span></div>
-        <div class="looking-text"><span>Reservaciones el tio walter</span></div>
+        <div class="book-text"><span></span></div>
+        <div class="looking-text"><span>Cuenta con baño privado</span></div>
       </div>
     </div>
   </div>

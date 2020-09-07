@@ -10,7 +10,7 @@ async function getHabitaciones (req, res) {
 
 
 async function agregarHabitacion(req, res) {
-    const { Caracteristicas, Id_Tipo, Nro_Habitacion, Precio, Nro_Piso, Estado, Tipo_Habitacion } = req.body
+    const { Caracteristicas, Id_Tipo, Nro_Habitacion, Precio, Nro_Piso, Estado, Tipo_Habitacion, urlImage } = req.body
     console.log(`los datos a agregar: ${Caracteristicas}`)
     const newHabitacion = new Habitacion({
         Caracteristicas,
@@ -19,12 +19,17 @@ async function agregarHabitacion(req, res) {
         Precio,
         Nro_Piso,
         Estado,
-        Tipo_Habitacion
+        Tipo_Habitacion,
+        urlImage
     })
     
     let result = await newHabitacion.save()
-    res.json(result)
+
+    const habitaciones = await Habitacion.find()
+    res.render('Layouts/outside/AdmiHabitacion', {habitaciones})
 }
+
+
 //req.query => envia un solo dato
 //req.body=> envia un objeto
 //req.query => envia datos por url

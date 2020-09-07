@@ -5,6 +5,7 @@ const { sendEmail } = require('../helpers/sendEmail')
 
 async function getAllReservas(req, res) {
     const misReservas = await Reserva.find()
+
     // const habitacion = await Habitacion.find()
     console.log(`mis reservas : ${misReservas}`)
     // for(var i = 0; i < misReservas.length; i++) {
@@ -17,7 +18,10 @@ async function getAllReservas(req, res) {
 
 async function agregarReserva(req, res) {
     const { Nro_documento, Nombre, Apellidos, Telefono, correo, Fecha_ingreso, Fecha_salida, id_Habitacion,Nro_Habitacion, Costo_Alojamiento, Igv, precio } = req.body
+    
     const Total = Igv + precio
+
+    console.log(`la fecha de la habitacion : ${Fecha_ingreso}`)
 
     const errors = []
     if (!Nro_documento || !Nombre || !Apellidos || !Telefono || !correo || !Fecha_ingreso || !Fecha_salida) {
@@ -47,19 +51,21 @@ async function agregarReserva(req, res) {
     res.render('Layouts/outside/ConfirmacionReserva')
 }
 
+
+
 async function changePago(req, res) {
-    var changeEstado = false
-    let { id_reserva, estado } = req.body
-    if (estado === true) {
-        console.log(`el estado esta en verdadero ${estado}`)
-        changeEstado = false
-    } else {
-        console.log(`el estado esta en falso ${estado}`)
-        changeEstado = true
-    }
-    const update = await Reserva.updateOne({ _id: id_reserva }, { $set: { Estado: changeEstado } })
-    const misReservas = await Reserva.find()
-    res.render('Layouts/outside/AdmiReserva', { misReservas })
+    // var changeEstado = false
+    // let { id_reserva, estado } = req.body
+    // if (estado === true) {
+    //     console.log(`el estado esta en verdadero ${estado}`)
+    //     changeEstado = false
+    // } else {
+    //     console.log(`el estado esta en falso ${estado}`)
+    //     changeEstado = true
+    // }
+    // const update = await Reserva.updateOne({ _id: id_reserva }, { $set: { Estado: changeEstado } })
+    // const misReservas = await Reserva.find()
+    // res.render('Layouts/outside/AdmiReserva', { misReservas })
 }
 
 
@@ -105,6 +111,13 @@ async function SearhRoom(req, res) {
             }
         )
 
+        for(let k = 0 ; k < porentr.length; k++) {
+            porentr[k].fecha_entrada = fecha_entrada
+            porentr[k].fecha_salida = fecha_salida
+        }
+
+            console.log(`esta es la fecha de entrada : ${porentr}`)
+
         res.render('Layouts/outside/ListaHabitacion', { porentr, fecha_entrada, fecha_salida })
         return
     }
@@ -137,6 +150,11 @@ async function SearhRoom(req, res) {
                 Tipo_Habitacion: { $in: ["Habitacion Suite", "Habitacion Individual"] }
             }
         )
+
+        for(let k = 0 ; k < porentr.length; k++) {
+            porentr[k].fecha_entrada = fecha_entrada
+            porentr[k].fecha_salida = fecha_salida
+        }
 
         res.render('Layouts/outside/ListaHabitacion', { porentr, fecha_entrada, fecha_salida })
         return
@@ -171,6 +189,11 @@ async function SearhRoom(req, res) {
             }
         )
 
+        for(let k = 0 ; k < porentr.length; k++) {
+            porentr[k].fecha_entrada = fecha_entrada
+            porentr[k].fecha_salida = fecha_salida
+        }
+
         res.render('Layouts/outside/ListaHabitacion', { porentr, fecha_entrada, fecha_salida })
         return
     }
@@ -203,6 +226,10 @@ async function SearhRoom(req, res) {
                 Tipo_Habitacion: { $in: ["Habitacion Familiar"] }
             }
         )
+        for(let k = 0 ; k < porentr.length; k++) {
+            porentr[k].fecha_entrada = fecha_entrada
+            porentr[k].fecha_salida = fecha_salida
+        }
 
         res.render('Layouts/outside/ListaHabitacion', { porentr, fecha_entrada, fecha_salida })
         return
@@ -237,6 +264,10 @@ async function SearhRoom(req, res) {
             }
         )
 
+        for(let k = 0 ; k < porentr.length; k++) {
+            porentr[k].fecha_entrada = fecha_entrada
+            porentr[k].fecha_salida = fecha_salida
+        }
         res.render('Layouts/outside/ListaHabitacion', { porentr, fecha_entrada, fecha_salida })
         return
     }

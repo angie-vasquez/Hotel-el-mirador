@@ -64,6 +64,7 @@ app.use(require('./src/routes/routes-api/login'))
 app.use(require('./src/routes/routes-api/habitacion'))
 app.use(require('./src/routes/routes-api/reserva'))
 app.use(require('./src/routes/routes-api/trabajador'))
+app.use(require('./src/routes/routes-api/factura'))
 //server listening
 
 

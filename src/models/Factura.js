@@ -2,9 +2,7 @@ const mongoose = requiere('mongoose')
 const Schema = mongoose.Schema
 
 const  factura = new Schema ({
-    idFactura: {type: number, 
-        requiere: true
-    },
+
     idTrabajador: {
         type: i,
         requiere: true

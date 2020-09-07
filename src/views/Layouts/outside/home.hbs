@@ -3,32 +3,32 @@
 
 {{> navbar}}
 
-<div class="titulo">
-  <h1>BIENVENIDO AL HOTEL EL MIRADOR</h1>
+<div style="width:50%; margin:auto; margin-top: 100px; margin-bottom:100px">
+  <h1 class="text-center mt-5" style="color:blue; font-weight:bold" >BIENVENIDO AL HOTEL EL MIRADOR</h1>
 
 </div>
 <div class="contenedor">
 </div>
-<div class="caja">
+<div style="width: 90%; margin:auto">
   <div id="container" class="row">
 
     <div id="menu" class="large-5 columns">
 
       <form action="/buscarHabitacionDisponible" method="POST" class="small-12 small-centered columns">
         <label for="fechaLlegada">Entrada</label>
-        <input type="date" name="fecha_entrada" id="fechaLlegada" />
+        <input class="mt-1" type="date" name="fecha_entrada" id="fechaLlegada" />
         <label for="fechaRegreso">Salida</label>
-        <input type="date" name="fecha_salida" id="fechaRegreso" />
+        <input class="mt-1" type="date" name="fecha_salida" id="fechaRegreso" />
 
         <label>¿Quiénes irán?</label>
-        <select id="adultosInvitados" name="nro_adultos" class="small-5 columns">
+        <select class="mt-1" id="adultosInvitados" name="nro_adultos" class="small-5 columns">
           <option value="1">1 Adulto</option>
           <option value="2">2 Adultos</option>
           <option value="3">3 Adultos</option>
           <option value="4">4 Adultos</option>
           <option value="5">5 Adultos</option>
         </select>
-        <select id="niñosInvitados" name="nro_menores" class="small-5 small-offset-2 columns">
+        <select class="mt-1" id="niñosInvitados" name="nro_menores" class="small-5 small-offset-2 columns">
           <option value="0">-</option>
           <option value="1">1 Niño</option>
           <option value="2">2 Niños</option>
@@ -36,33 +36,12 @@
           <option value="4">4 Niños</option>
           <option value="5">5 Niños</option>
         </select>
-        {{!-- <input type="button" value="Buscar" /> --}}
-        <li>
-          <input type="submit" class="btn btn-success" value="Buscar">
-        </li>
+        {{!-- <li> --}}
+          <div style=" width:200px; margin:auto">
+          <input style="width: 200px" type="submit" class="btn btn-outline-primary" value="Buscar">
+          </div>
+        {{!-- </li> --}}
       </form>
     </div>
   </div>
-
-
-
-
-  {{!-- <form action="/home" method="POST">
-
-                    <label for="Fecha_ingreso">Entrada</label>
-                    <input type="text" name="Fecha_ingreso"  placeholder="" required>
-
-                    <label for="Fecha_salida">Salida</label>
-                    <input type="text" name="Fecha_salida"  placeholder="" required>
-
-                    <label for="Numero_adultos">Adultos</label>
-                    <input type="text" name="Numero_adultos"  placeholder="" required>
-
-                    <label for="Numero_niños">Niños</label>
-                    <input type="text" name="Numero_niños"  placeholder="" required>
-
-                    <input type="submit" value="Continuar">
-                    </form> --}}
-
-
 </div>

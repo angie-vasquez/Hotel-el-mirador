@@ -12,7 +12,7 @@ const Habitacion = new Schema({
         },
         Id_Tipo:{
                 type: String, 
-                require: true 
+                require: false 
         },
         Nro_Habitacion:{
                 type: Number, 
@@ -34,6 +34,10 @@ const Habitacion = new Schema({
                 type: String, 
                 require: true 
         },
+        urlImage: {
+                type: String,
+                required: false
+        }
 })
 
 module.exports= mongoose.model('Habitacion',Habitacion)

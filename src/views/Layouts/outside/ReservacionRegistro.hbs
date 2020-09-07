@@ -1,30 +1,51 @@
 <link rel="stylesheet" href="css/ReservacionRegistro.css">
 
 
-  <link type="text/css" rel="stylesheet" href="css.css" media="screen,projection" />
+<link type="text/css" rel="stylesheet" href="css.css" media="screen,projection" />
+
+
+<style>
+  @media (max-width : 500px) {
+    .mains {
+      margin-top: 400px !important;
+    }
+    .detail {
+      position: static;
+       left: 0%;
+    }
+  }
+</style>
+
+<h1 class="pt-5 mb-5" style="font-weight: bold; text-decoration:underline">
+  Detalles de la reserva
+</h1>
+
+<hr>
+
+{{#each errors}}
+<div class="alert alert-danger alert-dismissible fade show mt-5" role="alert">
+  {{text}}
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+{{/each}}
 
 
 
-
-  {{#each errors}}
-  <div class="alert alert-danger alert-dismissible fade show mt-5" role="alert">
-    {{text}}
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
-  {{/each}}
-
-<div class="right-contains">
+<div class="detail" style="position: relative; left:50%">
   <p class="text-bold">Dealles de reserva</p>
   <ul class="dashed-list">
     <li>
-      Todos los demás artículos serán pagados a través de PayPal.
+      Todos los demás artículos serán pagados con efectivo.
     </li>
   </ul>
   <ul class="productList paypalItems">
     <li class="text-bold">
       Subtotal <span class="priceList">S/. {{precio}}</span>
+    </li>
+        <li class="text-bold">
+      Dias de reserva <span class="priceList"> {{diaTotal}}</span>
     </li>
     <li class="text-bold">
       Igv <span class="priceList">S/. {{Igv}}</span>
@@ -36,61 +57,46 @@
 </div>
 
 
-  <main>
-    <form action="addReserva" method="POST">
-      <div>
+{{!-- <main class=""> --}}
+  
+  <form class="" action="addReserva" method="POST">
+    <div class="mains" style="margin-top: -200px;">
+      <label>N° de documento:  </label>
+      <input type="text" name="Nro_documento" placeholder="Numero de documento" required>
+      <br />
+      <label>Nombre: </label>
+      <input type="text" name="Nombre" placeholder="Nombre" required>
+      <br />
+      <label>Apellidos: </label>
+      <input type="text" name="Apellidos" placeholder="Apellidos" required>
+      <br />
+      <label>Telefono: </label>
+      <input type="tel" name="Telefono" placeholder="Telefono" pattern="^[9|6]\d{8}$" required>
 
+      <br />
+      <label>Correo: </label>
+      <input type="email" name="correo" placeholder="Correo" required>
+      <br />
+      <label>Fecha de entrada:  </label>
+      <input type="date" name="" value="{{fecha_entrada}}" disabled>
+      <br />
+      <label>Fecha de Salida: </label>
+      <input type="date" name="" value="{{fecha_salida}}" disabled>
+      <br />
+{{!-- Fecha_ingreso --}}
+      <input type="hidden" name="id_Habitacion" value="{{idHabitacion}}">
+      <input type="hidden" name="Costo_Alojamiento" value="{{Total}}">
+      <input type="hidden" name="Igv" value="{{Igv}}">
+      <input type="hidden" name="precio" value="{{precio}}">
+      <input type="hidden" name="Nro_Habitacion" value="{{Nro_Habitacion}}">
+      <input type="hidden" name="Fecha_ingreso" value="{{fecha_entrada}}">
+      <input type="hidden" name="Fecha_salida" value="{{fecha_salida}}">
 
-        <label>N° de documento: </label>
-        <input type="text" name="Nro_documento" placeholder="Nombre" required>
-        <br />
-        <label>Nombre: </label>
-        <input type="text" name="Nombre" placeholder="Nombre" required>
-        <br />
-        <label>Apellidos: </label>
-        <input type="text" name="Apellidos" placeholder="Apellidos" required>
-        <br />
-        <label>Telefono: </label>
-        <input type="tel" name="Telefono" placeholder="Telefono" pattern="^[9|6]\d{8}$" required>
-        <!--Nueve digitos empezado por 9 o 6-->
-        <br />
-        <label>Correo: </label>
-        <input type="email" name="correo" placeholder="Correo" required>
-        <br />
-        {{!-- <label>Nº de noches: </label>
-            <input type="text" name="noches" placeholder="Nº Noches">
-            <br /> --}}
-        <label>Fecha de entrada: </label>
-        <input type="date" name="Fecha_ingreso" >
-        <br />
-        <label>Fecha de Salida: </label>
-        <input type="date" name="Fecha_salida" >
-        <br />
+      <center>
+        {{!-- <input type="reset" value="Borrar"> --}}
+        <input type="submit" value="Reservar">
+      </center>
 
-        <input type="hidden" name="id_Habitacion" value="{{idHabitacion}}">
-        <input type="hidden" name="Costo_Alojamiento" value="{{Total}}">
-        <input type="hidden" name="Igv" value="{{Igv}}">
-        <input type="hidden" name="precio" value="{{precio}}">
-        <input type="hidden" name="Nro_Habitacion" value="{{Nro_Habitacion}}">
-        {{!-- <input type="hidden" name="Estado" value=""> --}}
-
-
-        {{!-- <br /><br />
-            <label>Tipo de habitacion: </label>
-            <input type="radio" name="hab" value="simple"> Simple
-            <input type="radio" name="hab" value="doble"> Doble
-            <input type="radio" name="hab" value="matrimonio"> Matrimonio
-            <br /><br /> --}}
-
-        {{!-- <label>Comentarios:</label> --}}
-        {{!-- <br />
-            <textarea></textarea>
-            <br /><br /> --}}
-        <center>
-          <input type="reset" value="Borrar">
-          <input type="submit" value="Enviar" >
-        </center>
-
-      </div>
-    </form>
-  </main>
+    </div>
+  </form>
+{{!-- </main> --}}

@@ -57,7 +57,7 @@ async function sendEmail(email) {
                     check out rápido avisar 10 minutos antes para la elaboración de su cuenta. Al retiro del huésped
                     registrado, toda visita que tuviera deberá dejar la habitación y/o identificarse.
                 </p>
-                <a href="http://localhost:8000/">Gracias por elegirnos u.u</a>
+                <a href="http://localhost:8000/">Gracias por elegirnos </a>
             </div>
 
         </div>

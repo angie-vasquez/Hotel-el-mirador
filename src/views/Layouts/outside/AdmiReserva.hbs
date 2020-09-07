@@ -126,7 +126,7 @@
                                 {{/each}}
                             </tbody>
                         </table>
-                        <div class="clearfix">
+                        {{!-- <div class="clearfix">
                             <div class="hint-text">Mostrando <b>5</b> de <b>25</b> registros</div>
                             <ul class="pagination">
                                 <li class="page-item disabled"><a href="#">Anterior</a></li>
@@ -137,7 +137,7 @@
                                 <li class="page-item"><a href="#" class="page-link">5</a></li>
                                 <li class="page-item"><a href="#" class="page-link">Siguiente</a></li>
                             </ul>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
 
@@ -222,7 +222,7 @@
                             </div>
                             <div class="modal-footer">
                                 <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancelar">
-                                <form action="/changePago" method="post">
+                                <form action="/createFactura" method="post">
                                     {{!-- <p>{{_id}}</p> --}}
                                     {{!-- <span>{{Nombre}}</span> --}}
                                     <input id="id_reserva" type="hidden" name="id_reserva" value="{{_id}}">

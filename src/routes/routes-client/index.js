@@ -2,6 +2,8 @@
 
 const router= require('express').Router()
 const TipoHabitacion = require('../../models/Tipohabitaciones')
+const Habitacion = require('../../models/Habitación')
+
 const { getHabitacionTipo } = require('../../controllers/habitacionCtrl')
 // const { getHabitacionTipo }  = require('../../controllers/habitacionCtrl')
 
@@ -19,6 +21,16 @@ router.get('/Usuarios',isAuthenticated, (req,res)  => {
 })
 
 router.get('/ReservasAdmin',isAuthenticated, getAllReservas)
+
+
+router.get('/AdmiHabitacion', async (req,res) => {
+    
+     const habitaciones = await Habitacion.find()
+     console.log("dasdasdads", habitaciones)
+    res.render('Layouts/outside/AdmiHabitacion', {habitaciones})
+})
+
+
 //  (req,res) => {
      
 //     res.render('Layouts/outside/AdmiReserva')
@@ -84,12 +96,35 @@ router.post('/ListaHabitacion', getHabitacionTipo)
 
 
 router.post('/ReservacionRegistro',(req,res) => {
-    const { idHabitacion, precio, fecha_entrada, fecha_salida, Nro_Habitacion } = req.body
+    const { idHabitacion, fecha_entrada, fecha_salida, Nro_Habitacion } = req.body
+    var {precio}= req.body
+    const dateEntrada = new Date(fecha_entrada)
+    const dayEntrada = dateEntrada.getDate()
+    // const metEntrada= dayEntrada.getMonth()
+    console.log(`Fecha de entrada : ${dayEntrada}`)
+    
+    const dateSalida = new Date(fecha_salida)
+    const daySalida = dateSalida.getDate()
+    // const metSalida = dateSalida.getMonth() 
+    if(daySalida< dayEntrada ){
+            
+    var diaTotal = ( 31 - dayEntrada ) + daySalida  
+    }
+    else{
+        console.log(`Fecha de salida : ${daySalida}`)
+    var diaTotal = (daySalida + 1) - (dayEntrada + 1)
+    console.log(`dia total : ${diaTotal}`)
+
+
+    }
+    
+    precio= diaTotal*precio
     const Igv =  precio * 0.18
+
     const Total  = parseInt(precio) + Igv
-     console.log(`el id de la habitacion que voy a reservar : ${precio}`)
+     console.log(`el id de la habitacion que voy a reservar : ${fecha_entrada}`)
      
-    res.render('Layouts/outside/ReservacionRegistro', {idHabitacion, precio, Igv, Total, fecha_entrada, fecha_salida, Nro_Habitacion})
+    res.render('Layouts/outside/ReservacionRegistro', {idHabitacion, precio, Igv, Total, fecha_entrada, fecha_salida, Nro_Habitacion,diaTotal})
 })
 
 router.get('/ConfirmacionReserva', (req, res) => {
@@ -103,10 +138,11 @@ router.get('/AdmiDashboard',(req,res) => {
      res.render('Layouts/outside/AdmiDashboard')
 })
 
-router.get('/Administrador/Configuracion',(req,res) => {
-     
-    res.send('Este es el r!!')
-})
+
+
+
+
+
 
 router.get('/Administrador/perfil del hotel',(req,res) => {
      
